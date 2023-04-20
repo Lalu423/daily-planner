@@ -26,7 +26,7 @@ $(function () {
   function hourChecker() {
     //Get current time
       // var currentTime = dayjs().hour()
-      var currentTime = 12
+      var currentTime = dayjs().format('H')
       console.log("currentTime: ", currentTime)
     //Checking for each hour
     $('.time-block').each(function() {
@@ -35,13 +35,13 @@ $(function () {
       console.log("key: ", key)
 
       // Compare time block to current time
-      if (key < currentTime) {
-        $(this).addClass('past')
-        $(this).removeClass('present')
-      } else if(key === currentTime) {
-        $(this).addClass('present')
+      if (key === currentTime) {
+        $(this).removeClass('past future').addClass('present')
+
+      } else if(key < currentTime) {
+        $(this).removeClass('future present').addClass('past')
       } else {
-        $(this).addClass('future')
+        $(this).removeClass('past present').addClass('future')
       }
       
       // Set classes for current hour
