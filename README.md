@@ -8,11 +8,11 @@ The user will also be able to click the blue button to the right of the text are
 
 ## Usage example
 
-<img src="https://github.com/Lalu423/password-generator/blob/main/assets/Images/passwordgen-sh.jpg" width="500"/>
+<img src="https://github.com/Lalu423/daily-planner/blob/main/assets/app-sample.jpg" width="500"/>
 
-[Link to Repo](https://github.com/Lalu423/password-generator)
+[Link to Repo](https://github.com/Lalu423/daily-planner)
 
-[Link to Site](https://lalu423.github.io/password-generator/)
+[Link to Site](https://lalu423.github.io/daily-planner/)
 
 ## License
 
