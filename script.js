@@ -13,11 +13,11 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  $('.saveBtn').on('click', function() {
-        const key = $(this).parent().attr('id');
-        const value = $(this).siblings('.description').val();
-        localStorage.setItem(key, value);
-      });
+  $('.saveBtn').on('click', function () {
+    const key = $(this).parent().attr('id');
+    const value = $(this).siblings('.description').val();
+    localStorage.setItem(key, value);
+  });
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
@@ -25,11 +25,11 @@ $(function () {
   // current hour in 24-hour time?
   function hourChecker() {
     //Get current time
-      // var currentTime = dayjs().hour()
-      var currentTime = dayjs().format('H')
-      console.log("currentTime: ", currentTime)
+    // var currentTime = dayjs().hour()
+    var currentTime = dayjs().format('H')
+    console.log("currentTime: ", currentTime)
     //Checking for each hour
-    $('.time-block').each(function() {
+    $('.time-block').each(function () {
       // get time block
       const key = parseInt($(this).attr('id').split('-')[1]);
       console.log("key: ", key)
@@ -38,32 +38,35 @@ $(function () {
       if (key === currentTime) {
         $(this).removeClass('past future').addClass('present')
 
-      } else if(key < currentTime) {
+      } else if (key < currentTime) {
         $(this).removeClass('future present').addClass('past')
       } else {
         $(this).removeClass('past present').addClass('future')
       }
-      
+
       // Set classes for current hour
-      
+
     });
-      
+
 
 
 
   }
   hourChecker();
-
-  setInterval
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  $('.time-block').each(function() {
-      const key = $(this).attr('id');
-      const value = localStorage.getItem(key);
-      $(this).children('.description').val(value);
-    });
+  $('.time-block').each(function () {
+    const key = $(this).attr('id');
+    const value = localStorage.getItem(key);
+    $(this).children('.description').val(value);
+  });
+
+  hourChecker();
+  setInterval(updateTime, 1000);
+  
   //
   // TODO: Add code to display the current date in the header of the page. COMPLETED
 });
+
